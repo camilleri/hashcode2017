@@ -1,7 +1,6 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
-namespace Tests
+namespace test
 {
     public class Tests
     {
