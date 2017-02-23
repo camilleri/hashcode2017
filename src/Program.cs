@@ -26,7 +26,7 @@ namespace src
                 for (int c = 0; c < endPointHeader[1]; c++)
                 {
                     var connectedCache = Console.ReadLine().Split().ToList().Select(int.Parse).ToList();
-                    endpoint.CacheLatency.Add(connectedCache[0], connectedCache[1]);
+                    endpoint.CacheScore.Add(algorithm.Caches[connectedCache[0]], endpoint.DataCenterLatency - connectedCache[1]);
                 }
             }
 
@@ -34,10 +34,12 @@ namespace src
             foreach (var request in algorithm.Requests)
             {
                 var requestLine = Console.ReadLine().Split().ToList().Select(int.Parse).ToList();
-                request.VideoId = requestLine[0];
-                request.EndPointId = requestLine[1];
+                request.Video = algorithm.Videos[requestLine[0]];
+                request.EndPoint = algorithm.Endpoints[requestLine[1]];
                 request.Number = requestLine[2];
             }
+
+            algorithm.Calculate();
         }
     }
 }

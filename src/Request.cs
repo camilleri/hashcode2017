@@ -3,9 +3,9 @@
     public class Request
     {
 
-        public int VideoId { get; set; }
+        public Video Video { get; set; }
 
-        public int EndPointId { get; set; }
+        public Endpoint EndPoint { get; set; }
 
         public int Number { get; set; }
     }

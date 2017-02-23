@@ -7,11 +7,11 @@ namespace src
         public int Id { get; set; }
 
         public int DataCenterLatency { get; set; }
-        public Dictionary<int, int> CacheLatency { get; set; } // [cacheId, Latency]
+        public Dictionary<Cache, int> CacheScore { get; set; } // [cacheId, Score]
 
         public Endpoint()
         {
-            CacheLatency = new Dictionary<int, int>();
+            CacheScore = new Dictionary<Cache, int>();
         }
     }
 }
